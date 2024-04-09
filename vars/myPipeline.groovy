@@ -2,13 +2,13 @@ def call() {
     pipeline {
         agent any
         stages {
-               stage('Git Checkout') {
-                 steps {
-                     script {
-                        git branch: 'node-dev', url: 'https://github.com/Deepakraju007/multi-branch.git' //project-repo
-                     }
-                 }
-             }
+               // stage('Git Checkout') {
+                // steps {
+                //     script {
+                  //      git branch: 'node-dev', url: 'https://github.com/Deepakraju007/multi-branch.git' //project-repo
+                  // }
+                // }
+            // }
             stage ('Build') {
                 steps {
                     script {
