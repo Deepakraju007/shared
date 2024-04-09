@@ -2,13 +2,13 @@ def call() {
     pipeline {
         agent any
         stages {
-            // stage('Git Checkout') {
-            //     steps {
-            //         script {
-            //             git branch: 'node-dev', url: 'https://github.com/naresh26git/multi-branch.git' //project-repo
-            //         }
-            //     }
-            // }
+               stage('Git Checkout') {
+                 steps {
+                     script {
+                        git branch: 'node-dev', url: 'https://github.com/Deepakraju007/multi-branch.git' //project-repo
+                     }
+                 }
+             }
             stage ('Build') {
                 steps {
                     script {
@@ -29,7 +29,7 @@ def call() {
             stage('Docker Build Images') {
                 steps {
                     script {
-                        sh 'docker build -t naresh2603/multi:v1 .'
+                        sh 'docker build -t deepak5227/multi:v1 .'
                         sh 'docker images'
                         sh 'docker ps'
                     }
