@@ -29,7 +29,7 @@ def call() {
       stage('Docker Build') {
         steps{
           script{
-            sh 'docker build -t naresh2603/multi:v3 .'
+            sh 'docker build -t deepak5227/multi:v3 .'
             //sh 'docker images'
           }
         }
@@ -38,9 +38,9 @@ def call() {
         steps{
           script{
             withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
-              sh "docker login -u naresh2603 -p ${dockerPassword}"
-              sh 'docker push naresh2603/multi:v1'
-              sh 'docker rmi naresh2603/multi:v1'
+              sh "docker login -u deepak5227 -p ${dockerPassword}"
+              sh 'docker push deepak5227/multi:v1'
+              sh 'docker rmi deepak5227/multi:v1'
             }
           }
         }
